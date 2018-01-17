@@ -1,0 +1,18 @@
+#!/bin/bash
+# Start a virtual environment in ~/.virtualenvs
+
+function usage
+{
+    echo -e "Usage: . venv virtual_environment_name\n"\
+    "      deactivate\tto deactivate virtualenv"
+}
+
+# Main
+
+if [ "$1" = "--help" ]; then
+    usage
+elif [ "$1" ]; then
+    source ~/.virtualenvs/$1/bin/activate
+else
+    usage
+fi
